@@ -1,0 +1,16 @@
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Data\bin\Debug\ConsultoriaSAS.Data.dll.config
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Data\bin\Debug\ConsultoriaSAS.Data.dll
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Data\bin\Debug\ConsultoriaSAS.Data.pdb
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Data\bin\Debug\ConsultoriaSAS.Entity.dll
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Data\bin\Debug\EntityFramework.dll
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Data\bin\Debug\ConsultoriaSAS.Entity.pdb
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Data\bin\Debug\EntityFramework.xml
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Data\bin\Debug\es\EntityFramework.resources.dll
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Data\bin\Debug\es\EntityFramework.SqlServer.resources.dll
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Data\obj\Debug\ConsultoriaSAS.Data.csprojAssemblyReference.cache
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Data\obj\Debug\ConsultoriaSAS.Data.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Data\obj\Debug\ConsultoriaSAS.Data.csproj.CopyComplete
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Data\obj\Debug\ConsultoriaSAS.Data.dll
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Data\obj\Debug\ConsultoriaSAS.Data.pdb

@@ -1,0 +1,9 @@
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Common\bin\Debug\ConsultoriaSAS.Common.dll
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Common\bin\Debug\ConsultoriaSAS.Common.pdb
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Common\obj\Debug\ConsultoriaSAS.Common.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Common\obj\Debug\ConsultoriaSAS.Common.dll
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Common\obj\Debug\ConsultoriaSAS.Common.pdb
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Common\obj\Debug\ConsultoriaSAS.Common.csprojAssemblyReference.cache
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Common\bin\Debug\Newtonsoft.Json.dll
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Common\bin\Debug\Newtonsoft.Json.xml
+C:\Users\User\Documents\consultoriasas\ConsultoriaSAS.Common\obj\Debug\ConsultoriaSAS.Common.csproj.CopyComplete
