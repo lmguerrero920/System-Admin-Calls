@@ -1,0 +1,107 @@
+﻿@model IEnumerable<ConsultoriaSAS.Entity.Entities.Customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@Html.Partial("_ModalPage")
+
+
+<div class="table-responsive">
+    <table class="table table-bordered table-condensed table-striped table-hover sortable">
+
+        <thead>
+            <tr style="  background-color: #343c44">
+
+                <th style="text-align: center ; ">
+                    <font color="#fff">
+                        Nombre
+                    </font>
+                </th>
+                <th style="text-align: center ; ">
+                    <font color="#fff">
+                        Apellidos
+                    </font>
+                </th>
+
+
+                <th style="text-align: center ; ">
+                    <font color="#fff">
+                        Documento
+                    </font>
+                </th>
+                <th style="text-align: center ; ">
+                    <font color="#fff">
+                        Telefono
+                    </font>
+                </th>
+
+                <th style="text-align: center ; ">
+                    <font color="#fff">
+                        Celular
+                    </font>
+                </th>
+                <th style="text-align: center ; ">
+                    <font color="#fff">
+                        Correo
+                    </font>
+                </th>
+                <th style="text-align: center ; ">
+                    <font color="#fff">
+                        Fecha Nacimiento
+                    </font>
+                </th>
+                <th style="text-align: center ; ">
+                    <font color="#fff">
+                       Acciones
+                    </font>
+                </th>
+
+            </tr>
+        </thead>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+               
+                <td class="table-active" style="text-align: center">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td class="table-active" style="text-align: center">
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td class="table-active" style="text-align: center">
+                    @Html.DisplayFor(modelItem => item.Document)
+                </td>
+                <td class="table-active" style="text-align: center">
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td class="table-active" style="text-align: center">
+                    @Html.DisplayFor(modelItem => item.CellPhone)
+                </td>
+                <td class="table-active" style="text-align: center">
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td class="table-active" style="text-align: center">
+                    @Html.DisplayFor(modelItem => item.DateOfBirth)
+                </td>
+                <td class="table-active" style="text-align: center">
+                    @Html.ActionLink("Modif.", "Edit", new { id = item.CustomerId }, new { @class = "btn btn btn-dark" })
+                    @Html.ActionLink("Ver", "Details", new { id = item.CustomerId }, new { @class = "btn btn btn-dark" })
+                    @Html.ActionLink("Elim.", "Delete", new { id = item.CustomerId }, new { @class = "btn btn btn-dark" })
+
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+@section scripts
+{
+
+    <script src="~/Scripts/ViewModal/Customers.js"></script>
+
+}

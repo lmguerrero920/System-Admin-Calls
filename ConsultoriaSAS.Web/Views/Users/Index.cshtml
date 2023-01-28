@@ -1,0 +1,65 @@
+﻿
+@model IEnumerable<ConsultoriaSAS.Web.ModelView.UserView>
+@{
+    ViewBag.Title = "Index";
+}
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Permisions Manager</h2>
+
+
+@Html.Partial("_ModalPage")
+
+<div class="table-responsive">
+    <table class="table table-bordered table-condensed table-striped table-hover sortable">
+
+
+        <thead>
+            <tr style="  background-color: #343c44">
+
+                <th style="text-align: center ; ">
+                    <font color="#fff">
+                        Nombre
+                    </font>
+
+                <th style="text-align: center ; ">
+                    <font color="#fff">
+                        Usuario
+                    </font>
+
+
+                <th style="text-align: center ; ">
+                    <font color="#fff">
+                        Acciones
+                    </font>
+                </th>
+            </tr>
+        </thead>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="table-active" style="text-align: center">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td class="table-active" style="text-align: center">
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+
+                <td class="table-active" style="text-align: center">
+                    @Html.ActionLink("Roles", "Roles", new { userID = item.UserId }, new { @class = "btn btn btn-dark" })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>
+@section scripts
+{
+    <script src="~/Scripts/ViewModal/Employee.js"></script>
+}

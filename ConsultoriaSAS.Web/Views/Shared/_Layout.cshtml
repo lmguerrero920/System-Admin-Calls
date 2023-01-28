@@ -1,0 +1,332 @@
+﻿@using Microsoft.AspNet.Identity
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - CONSULTORIA S.A.S</title>
+
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.9.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-ui-timepicker-addon@1.6.3/dist/jquery-ui-timepicker-addon.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/jquery-ui-timepicker-addon@1.6.3/dist/jquery-ui-timepicker-addon.min.css" rel="stylesheet" />
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"
+            integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+            crossorigin="anonymous"></script>
+
+
+    <script src="~/Scripts/jquery.datetimepicker.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+
+    <link href="~/Content/jquery.datetimepicker.css" rel="stylesheet" />
+
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    @*<script src="~/Scripts/jquery-3.3.1.slim.min.js"></script>*@
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- Site -->
+    <link rel="stylesheet" href="~/Content/Site.css">
+    <script src="~/Scripts/Site.js"></script>
+
+    <!-- SweetAlert -->
+    <link href='~/Content/sweetalert.css' rel='stylesheet' />
+    <script src='~/Scripts/sweetalert.min.js'></script>
+
+
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    @Styles.Render("~/Content/css")
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/jquery-3.2.1.min.js")
+
+
+    @Styles.Render("~/Content/ej2/bootstrap.css")
+    @Scripts.Render("~/Scripts/ej2/ej2.min.js")
+
+    <!-- ADMINLTE 3 -->
+    <!-- ADMINLTE 3 -->
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="~/Material/plugins/fontawesome-free/css/all.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="~/Material/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Material/dist/css/adminlte.min.css">
+
+
+
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+
+        @if (Request.IsAuthenticated)
+        { 
+
+            <div class="bg-light border-right" id="sidebar-wrapper">
+                <div class="sidebar-heading" style="background-color: #343c44">
+                    <p style="color:#FFFF"> CONSULTORIA S.A.S</p>
+                </div>
+                <div class="list-group list-group-flush">
+
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+                            @if (User.IsInRole("Admin"))
+                            {
+                                @*Solicitudes*@
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="fas fa-balance-scale"></i>
+                                        <p>
+
+                                            Solicitudes
+                                            <i class="fas fa-angle-left right"></i>
+
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+
+                                        <li class="nav-item">
+                                            <a href="~/Calls/Index" class="nav-link">
+                                                <i class="far fa-check-circle"></i>
+                                                <p>Llamadas</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="~/VisualizeData/LineChart" class="nav-link">
+                                                <i class="far fa-check-circle"></i>
+                                                <p>Reportes</p>
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a href="~/Pqrs/Index" class="nav-link">
+                                                <i class="far fa-check-circle"></i>
+                                                <p>PQR</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="~/Requests/Index" class="nav-link">
+                                                <i class="far fa-check-circle"></i>
+                                                <p>Requerimiento</p>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+
+                                @*Configuraciones*@
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="fas fa-globe"></i>
+                                        <p>
+                                            Configuraciones
+                                            <i class="fas fa-angle-left right"></i>
+
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+
+
+
+                                        <li class="nav-item">
+                                            <a href="~/RequestTypes/Index" class="nav-link">
+                                                <i class="far fa-check-circle"></i>
+                                                <p>Tipo Requerimiento</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="~/WorkStations/Index" class="nav-link">
+                                                <i class="far fa-check-circle"></i>
+                                                <p>Cargos</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="~/DocumentTypes/Index" class="nav-link">
+                                                <i class="far fa-check-circle"></i>
+                                                <p>Tipos de Documento</p>
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a href="~/PqrTypes/Index" class="nav-link">
+                                                <i class="far fa-check-circle"></i>
+                                                <p>Tipos de PQR</p>
+                                            </a>
+                                        </li>
+
+
+                                    </ul>
+                                </li>
+
+
+                                @*Usuarios*@
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="fas fa-heartbeat"></i>
+                                        <p>
+                                            Usuarios
+                                            <i class="fas fa-angle-left right"></i>
+
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+
+
+
+                                        <li class="nav-item">
+                                            <a href="~/Customers/Index" class="nav-link">
+                                                <i class="far fa-check-circle"></i>
+                                                <p>Clientes</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="~/Employees/Index" class="nav-link">
+                                                <i class="far fa-check-circle"></i>
+                                                <p>Empleados</p>
+                                            </a>
+                                        </li>
+
+
+                                    </ul>
+                                </li>
+
+
+                                @*Manager*@
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="fas fa-heartbeat"></i>
+                                        <p>
+                                            Administración
+                                            <i class="fas fa-angle-left right"></i>
+
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+
+
+
+                                        <li class="nav-item">
+                                            <a href="~/Users/Index" class="nav-link">
+                                                <i class="far fa-check-circle"></i>
+                                                <p>Control de usuario</p>
+                                            </a>
+                                        </li> 
+
+                                    </ul>
+                                </li>
+
+
+                            }
+
+
+
+
+
+
+                        </ul>
+
+
+                    </nav>
+
+                </div>
+
+
+            </div>
+
+        }
+
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <i class="fas fa-align-justify" id="menu-toggle"></i>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </nav>
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- Menu Toggle Script -->
+    <!-- ============================================================== -->
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+
+
+
+    <script src="~/Scripts/master/plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="~/Scripts/master/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>$.widget.bridge('uibutton', $.ui.button)</script>
+    <!-- Bootstrap 4 -->
+    <script src="~/Scripts/master/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="~/Scripts/master/plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="~/Scripts/master/plugins/sparklines/sparkline.js"></script>
+    <!-- JQVMap -->
+    <script src="~/Scripts/master/plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="~/Scripts/master/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="~/Scripts/master/plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="~/Scripts/master/plugins/moment/moment.min.js"></script>
+    <script src="~/Scripts/master/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="~/Scripts/master/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="~/Scripts/master/plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="~/Scripts/master/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/Scripts/master/dist/js/adminlte.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/Scripts/master/dist/js/demo.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="~/Scripts/master/dist/js/pages/dashboard.js"></script>
+
+   
+    @RenderSection("scripts", required: false)
+
+    @Scripts.Render("~/bundles/Script-Timepicker")
+    @Scripts.Render("/Scripts/script-custom-timepicker.js")
+
+
+</body>
+</html>
+
+
+
+
+
+

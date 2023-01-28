@@ -1,0 +1,59 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Result Visualization</title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeCallsResult", "VisualizeData")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChart(result);
+                    });
+                }
+            });
+        });
+
+        function drawChart(result) {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Name');
+            data.addColumn('number', 'Marks Obtained');
+            var dataArray = [];
+
+            $.each(result, function (i, obj) {
+                dataArray.push([obj.stdName, obj.marksObtained]);
+            });
+            data.addRows(dataArray);
+
+            var columnChartOptions = {
+                title: "Calls for Days",
+                width: 1000,
+                height: 400,
+                bar: { groupWidth: "20%" },
+            };
+
+            var columnChart = new google.visualization.PieChart(document
+                .getElementById('piechart_div'));
+
+            columnChart.draw(data, columnChartOptions);
+        }
+    </script>
+</head>
+<body>
+    <div id="piechart_div"></div>
+    <a href="PieChart" class="active btn btn-danger">Reporte en pastel</a>
+    <a href="ColumnChart" class="btn btn-primary">Reporte en Barra</a>
+    <a href="LineChart" class="btn btn-warning">Reporte en Linea</a> 
+</body>
+</html>
+

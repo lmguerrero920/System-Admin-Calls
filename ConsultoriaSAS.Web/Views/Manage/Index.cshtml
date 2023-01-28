@@ -1,0 +1,39 @@
+﻿@model ConsultoriaSAS.Web.Models.IndexViewModel
+@{
+    ViewBag.Title = "Administrar";
+}
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div>
+    <h4>Actualizar Contraseña</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Contraseña:</dt>
+        <dd>
+
+            @if (Model.HasPassword)
+            {
+                @Html.Partial("_ModalPage")
+              
+            }
+            else
+            {
+                @Html.ActionLink("Crear", "SetPassword")
+            }
+
+        </dd>
+
+    </dl>
+</div>
+
+
+@section scripts
+{
+    <script src="~/Scripts/ViewModal/Password.js"></script>
+}
